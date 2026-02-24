@@ -1,0 +1,6 @@
+[tools]
+node = "lts"
+"npm:@google/gemini-cli" = "latest"
+
+rust = { version = "stable", components = "rust-src,rust-analyzer,clippy,rustfmt" }
+"cargo:samply" = "latest"
