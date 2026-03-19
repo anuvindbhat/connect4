@@ -124,7 +124,7 @@ pub const SIDEBAR_HPAD: usize = 1;
 pub const MIN_UI_WIDTH: u16 = 105;
 
 /// Minimum terminal height required to display the UI without overlap.
-pub const MIN_UI_HEIGHT: u16 = 38;
+pub const MIN_UI_HEIGHT: u16 = 39;
 
 /// Total range used for scaling the intelligence pane's evaluation gauge.
 /// Set to 4000 so that a single threat (1000) shows as a 25% shift (75% total win prob),

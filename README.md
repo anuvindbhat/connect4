@@ -41,7 +41,7 @@ This project is structured as a dual-purpose codebase:
 
 - **Rust**: 2024 Edition (Stable).
 - **mise**: (Recommended) Used for toolchain and environment management.
-- **Terminal Size**: Minimum **105x38** characters required for the TUI.
+- **Terminal Size**: Minimum **105x39** characters required for the TUI.
 
 ### Installation and Execution
 

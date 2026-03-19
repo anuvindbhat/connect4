@@ -133,7 +133,7 @@ This project uses `mise` for toolchain management.
 - **Mandatory Lints**: Never commit without passing `cargo clippy --all-targets --all-features` and `cargo fmt`. Note that `clippy --pedantic` and `--all` are enforced at the project level via `Cargo.toml`.
 - **Headless Integrity**: Always verify library compilation with `cargo check --no-default-features --all-targets`.
 - **Verification**: Always run `cargo test --all-features --all-targets` before submitting changes.
-- **UI Constraints**: The TUI requires a minimum size of `105x38` characters.
+- **UI Constraints**: The TUI requires a minimum size of `105x39` characters.
 
 ### 7. Code Guidelines
 
