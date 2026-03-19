@@ -29,10 +29,6 @@ jobs:
             suffix: x86_64-windows
             binary_name: connect4.exe
             archive_ext: zip
-          - os: macos-13
-            suffix: x86_64-macos
-            binary_name: connect4
-            archive_ext: tar.gz
           - os: macos-latest
             suffix: aarch64-macos
             binary_name: connect4
@@ -40,8 +36,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install mise
-        uses: jdx/mise-action@v2
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
 
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2
