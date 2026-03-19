@@ -537,7 +537,7 @@ fn init_tracing() -> tracing_appender::non_blocking::WorkerGuard {
         .unwrap()
         .as_secs();
 
-    let log_file_name = format!("sim_ai_{timestamp}.log");
+    let log_file_name = format!("sim-ai-{timestamp}.log");
     let file_appender = tracing_appender::rolling::never(LOG_DIR, log_file_name);
     let (non_blocking, guard) = tracing_appender::non_blocking(file_appender);
     let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));

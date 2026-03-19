@@ -2,6 +2,7 @@
 name = "connect4"
 version = "0.1.1"
 edition = "2024"
+default-run = "connect4-tui"
 
 [profile.release-debug]
 inherits = "release"
@@ -41,28 +42,29 @@ clap = { version = "4.5", features = ["derive"], optional = true }
 criterion = { version = "0.8", features = ["html_reports"] }
 
 [[bin]]
-name = "connect4"
+name = "connect4-tui"
 path = "src/main.rs"
 required-features = ["tui"]
 
 [[bin]]
-name = "bench_ai"
+name = "bench-ai"
 path = "src/bin/bench_ai.rs"
 
 [[bin]]
-name = "sim_ai"
+name = "sim-ai"
 path = "src/bin/sim_ai.rs"
 required-features = ["tools"]
 
 [[bin]]
-name = "tune_ai"
+name = "tune-ai"
 path = "src/bin/tune_ai.rs"
 required-features = ["tools"]
 
 [[bin]]
-name = "profile_ai"
+name = "profile-ai"
 path = "src/bin/profile_ai.rs"
 
 [[bench]]
-name = "ai_search"
+name = "ai-search"
+path = "benches/ai_search.rs"
 harness = false

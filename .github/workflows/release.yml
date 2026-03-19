@@ -23,15 +23,18 @@ jobs:
         include:
           - os: ubuntu-latest
             suffix: x86_64-linux
-            binary_name: connect4
+            binary_name: connect4-tui
+            release_name: connect4
             archive_ext: tar.gz
           - os: windows-latest
             suffix: x86_64-windows
-            binary_name: connect4.exe
+            binary_name: connect4-tui.exe
+            release_name: connect4.exe
             archive_ext: zip
           - os: macos-latest
             suffix: aarch64-macos
-            binary_name: connect4
+            binary_name: connect4-tui
+            release_name: connect4
             archive_ext: tar.gz
     steps:
       - uses: actions/checkout@v6
@@ -70,15 +73,15 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           mkdir -p staging
-          cp target/release/${{ matrix.binary_name }} staging/
+          cp target/release/${{ matrix.binary_name }} staging/${{ matrix.release_name }}
           [ -f README.md ] && cp README.md staging/
           [ -f LICENSE ] && cp LICENSE staging/
 
           # Strip symbols to reduce binary size
           if [[ "${{ runner.os }}" == "Linux" ]]; then
-            strip staging/${{ matrix.binary_name }}
+            strip staging/${{ matrix.release_name }}
           elif [[ "${{ runner.os }}" == "macOS" ]]; then
-            strip -x staging/${{ matrix.binary_name }}
+            strip -x staging/${{ matrix.release_name }}
           fi
 
       - name: Create Archive (Unix)

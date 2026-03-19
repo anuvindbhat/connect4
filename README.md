@@ -101,25 +101,27 @@ This project is structured as a dual-purpose codebase:
 - `src/main.rs`: TUI application entry point.
 - `src/ui.rs`: Rendering logic using `ratatui`.
 
+**API Reference**: [anuvind.com/hosted/connect4/doc/connect4/](https://anuvind.com/hosted/connect4/doc/connect4/)
+
 ### Specialized Tools
 
 The project includes several binaries for development and tuning, located in `src/bin/`:
 
-- **AI Tuner (`tune_ai`)**: Optimizes heuristic weights using Differential Evolution (jDE) and SPRT.
+- **AI Tuner (`tune-ai`)**: Optimizes heuristic weights using Differential Evolution (jDE) and SPRT.
   ```bash
-  cargo run --features tools --bin tune_ai
+  cargo run --features tools --bin tune-ai
   ```
-- **Tournament Simulator (`sim_ai`)**: Calculates Elo ratings by running AI vs AI tournaments.
+- **Tournament Simulator (`sim-ai`)**: Calculates Elo ratings by running AI vs AI tournaments.
   ```bash
-  cargo run --features tools --bin sim_ai
+  cargo run --features tools --bin sim-ai
   ```
-- **Performance Bench (`bench_ai`)**: Measures search throughput (NPS) and tactical accuracy.
+- **Performance Bench (`bench-ai`)**: Measures search throughput (NPS) and tactical accuracy.
   ```bash
-  cargo run --bin bench_ai
+  cargo run --bin bench-ai
   ```
-- **Profiler (`profile_ai`)**: A minimal tool for profiling search performance and TT efficiency.
+- **Profiler (`profile-ai`)**: A minimal tool for profiling search performance and TT efficiency.
   ```bash
-  cargo run --bin profile_ai
+  cargo run --bin profile-ai
   ```
 
 ### Technical Architecture Highlights

@@ -45,7 +45,7 @@ mod ui_session;
 #[command(author, version, about, long_about = None)]
 struct Cli {
     /// Optional path to a log file. If provided, logging will be initialized to this file.
-    #[arg(short, long, value_name = "FILE")]
+    #[arg(short = 'f', long, value_name = "FILE")]
     log_file: Option<std::path::PathBuf>,
     /// The logging level (e.g., "info", "debug", "error"). Defaults to "info".
     #[arg(short, long, default_value = "info")]

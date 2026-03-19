@@ -1717,7 +1717,7 @@ fn render_piece(
 ///
 /// # Arguments
 /// * `limit` - Maximum length for the name before truncation.
-/// * `show_suffix` - Whether to append "[You]" to the local player's name in remote mode.
+/// * `show_suffix` - Whether to append "\[You\]" to the local player's name in remote mode.
 pub fn get_display_name(
     app: &App,
     session: &UiGameSession,

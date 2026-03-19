@@ -43,18 +43,18 @@ The project is structured as a dual-purpose codebase:
 
 ### Tools (`src/bin/`)
 
-- `src/bin/tune_ai.rs`: Evolutionary Strategy (jDE) tuner for heuristic weights using SPRT.
-- `src/bin/sim_ai.rs`: AI vs AI tournament simulator and Elo rating calculator.
-- `src/bin/bench_ai.rs`: Performance benchmarking and tactical suite runner.
-- `src/bin/profile_ai.rs`: Simple tool for profiling AI search performance.
+- `src/bin/tune_ai.rs`: Evolutionary Strategy (jDE) tuner for heuristic weights using SPRT. (Binary: `tune-ai`)
+- `src/bin/sim_ai.rs`: AI vs AI tournament simulator and Elo rating calculator. (Binary: `sim-ai`)
+- `src/bin/bench_ai.rs`: Performance benchmarking and tactical suite runner. (Binary: `bench-ai`)
+- `src/bin/profile_ai.rs`: Simple tool for profiling AI search performance. (Binary: `profile-ai`)
 
 ## Building and Running
 
 This project uses `mise` for toolchain management.
 
-- **Run TUI App**: `cargo run`
+- **Run TUI App**: `cargo run` (Default binary: `connect4-tui`)
 - **Run Headless Lib Check**: `cargo check --no-default-features --all-targets`
-- **Run a Tool (Tuner)**: `cargo run --features tools --bin tune_ai`
+- **Run a Tool (Tuner)**: `cargo run --features tools --bin tune-ai`
 - **Run All Tests**: `cargo test --all-features --all-targets`
 - **Lint All Code**: `cargo clippy --all-targets --all-features`
 - **Run Formatter**: `cargo fmt`
