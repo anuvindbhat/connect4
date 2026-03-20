@@ -60,7 +60,7 @@ jobs:
 
       - name: Build Release
         if: startsWith(github.ref, 'refs/tags/v')
-        run: cargo build --release --all-features
+        run: cargo build --profile dist --all-features
 
       - name: Get Version
         if: startsWith(github.ref, 'refs/tags/v')
@@ -73,11 +73,11 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           mkdir -p staging
-          cp target/release/${{ matrix.binary_name }} staging/${{ matrix.release_name }}
+          cp target/dist/${{ matrix.binary_name }} staging/${{ matrix.release_name }}
           [ -f README.md ] && cp README.md staging/
           [ -f LICENSE ] && cp LICENSE staging/
 
-          # Strip symbols to reduce binary size
+          # Additional stripping for non-Windows (dist profile handles symbols, but this ensures minimal size)
           if [[ "${{ runner.os }}" == "Linux" ]]; then
             strip staging/${{ matrix.release_name }}
           elif [[ "${{ runner.os }}" == "macOS" ]]; then

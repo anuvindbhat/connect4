@@ -4,9 +4,16 @@ version = "0.1.1"
 edition = "2024"
 default-run = "connect4-tui"
 
+[profile.dist]
+inherits = "release"
+codegen-units = 1
+lto = "fat"
+strip = "symbols"
+opt-level = 3
+
 [profile.release-debug]
 inherits = "release"
-debug = true
+debug = "full"
 
 [lints.clippy]
 all = "deny"
