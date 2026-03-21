@@ -57,21 +57,21 @@ const SCORE_FORK_IMMEDIATE: i32 = 10000;
 const SCORE_THREAT_IMMEDIATE: i32 = 1000;
 
 /// Heuristic score for a future (unblocked) 3-in-a-window threat.
-const SCORE_THREAT_FUTURE: i32 = 450;
+const SCORE_THREAT_FUTURE: i32 = 370;
 
 /// Heuristic score for an immediately playable 2-in-a-window set up
 /// (an empty cell in a 2-in-a-window that is immediately playable).
-const SCORE_SETUP_IMMEDIATE: i32 = 300;
+const SCORE_SETUP_IMMEDIATE: i32 = 96;
 
 /// Heuristic score for a 3-in-a-window structural pattern (not necessarily an immediate threat).
-const SCORE_THREE: i32 = 200;
+const SCORE_THREE: i32 = 213;
 
 /// Heuristic score for a 2-in-a-window connection.
-const SCORE_TWO: i32 = 50;
+const SCORE_TWO: i32 = 10;
 
 /// Weighting factor for potential winning windows (Mobility).
 /// Rewards players for keeping their options open and "bottlenecking" the opponent.
-const WEIGHT_POTENTIAL_WINDOW: i32 = 50;
+const WEIGHT_POTENTIAL_WINDOW: i32 = 51;
 
 // ========================================================================================
 // POSITIONAL WEIGHTS (3-TIER GRADIENT)
@@ -79,15 +79,15 @@ const WEIGHT_POTENTIAL_WINDOW: i32 = 50;
 
 /// Weighting factor for "The Core" (Tier 0).
 /// The primary central foundation hubs and high-connectivity intersections.
-const WEIGHT_CORE: i32 = 15;
+const WEIGHT_CORE: i32 = 551;
 
 /// Weighting factor for "The Inner Shell" (Tier 1).
 /// The secondary strategic support cells and inner flanks.
-const WEIGHT_INNER: i32 = 8;
+const WEIGHT_INNER: i32 = 219;
 
 /// Weighting factor for "The Outer Perimeter" (Tier 2).
 /// The edge columns and top rows (mathematically the weakest).
-const WEIGHT_OUTER: i32 = 1;
+const WEIGHT_OUTER: i32 = 49;
 
 /// A collection of weights used by the AI heuristic evaluation and search parameters.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

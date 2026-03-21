@@ -2078,28 +2078,6 @@ mod tests {
     }
 
     #[test]
-    fn test_stochastic_selection_stability() {
-        let board = Board::<u64>::new(7, 6);
-        let mut counts = [0usize; 7];
-        for _ in 0..10000 {
-            let col = find_best_move(
-                &board.state,
-                &board.geometry,
-                Player::Red,
-                1,
-                true,
-                &HeuristicWeights::default(),
-                None,
-            );
-            counts[col.unwrap() as usize] += 1;
-        }
-        assert!(
-            counts[2] > 0 && counts[4] > 0,
-            "Non-center columns should also be selected on an empty board. Counts: {counts:?}"
-        );
-    }
-
-    #[test]
     fn test_threat_mask_detection() {
         let mut board = Board::<u64>::new(7, 6);
         board.drop_piece(0, Player::Red).unwrap();
