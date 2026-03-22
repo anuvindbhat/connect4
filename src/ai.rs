@@ -358,7 +358,7 @@ fn select_boltzmann_move<T: Bitboard>(
         .max()
         .expect("No scores available");
 
-    // Calculate dynamic temperature based on game progress (Progressive Decay)
+    // Calculate dynamic temperature based on game progress.
     // As the board fills up, the temperature drops towards zero, making the AI more deterministic.
     let total_cells = geo.columns * geo.rows;
     let occupied_cells = (state.bits(Player::Red) | state.bits(Player::Yellow)).count_ones();
