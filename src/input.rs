@@ -243,13 +243,11 @@ fn handle_local_lobby_key(
                 app.state = AppState::PlayerSelection { selected_idx: 0 };
             }
         }
-        KeyCode::Char('s' | 'S') => {
+        KeyCode::Char('s' | 'S') if net.is_hosting => {
             // Stop hosting without leaving the lobby
-            if net.is_hosting {
-                tracing::info!("Stopping hosting");
-                net.manager.try_send(NetworkCommand::StopDiscovery);
-                net.is_hosting = false;
-            }
+            tracing::info!("Stopping hosting");
+            net.manager.try_send(NetworkCommand::StopDiscovery);
+            net.is_hosting = false;
         }
         _ => {}
     }

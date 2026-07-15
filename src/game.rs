@@ -1326,12 +1326,12 @@ mod tests {
             // Just ensuring it doesn't panic and state is consistent
             match (b.state, &b.geometry) {
                 (DynamicBoardState::Small(s), DynamicBoardGeometry::Small(g)) => {
-                    assert!(s.red & s.yellow == 0);
-                    assert!((s.red | s.yellow) & !g.board_mask == 0);
+                    assert_eq!(s.red & s.yellow, 0);
+                    assert_eq!((s.red | s.yellow) & !g.board_mask, 0);
                 }
                 (DynamicBoardState::Large(s), DynamicBoardGeometry::Large(g)) => {
-                    assert!(s.red & s.yellow == 0);
-                    assert!((s.red | s.yellow) & !g.board_mask == 0);
+                    assert_eq!(s.red & s.yellow, 0);
+                    assert_eq!((s.red | s.yellow) & !g.board_mask, 0);
                 }
                 _ => panic!("State/Geometry variants must match"),
             }
