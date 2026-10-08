@@ -1,5 +1,3 @@
 [tools]
-antigravity-cli = "latest"
-
 rust = { version = "stable", components = "rust-src,rust-analyzer,clippy,rustfmt" }
 "cargo:samply" = "latest"
